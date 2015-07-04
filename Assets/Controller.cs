@@ -22,7 +22,7 @@ public class Controller : MonoBehaviour
 			dy = Input.GetAxis ("Vertical");
 			transform.Rotate (Vector3.forward,-dx*2);
 			transform.Translate(0.0f,dy*0.1f,0.0f);
-			GetComponent<NetworkView>().RPC ("MovePlayer",RPCMode.Others,transform.position);
+			GetComponent<NetworkView>().RPC ("MovePlayer",RPCMode.Others,transform.position,dx);
 		}
 //		if(Input.GetKeyDown("SPACE")
 //		{
@@ -30,10 +30,10 @@ public class Controller : MonoBehaviour
 		}
 
 	[RPC]
-	public void MovePlayer(Vector3 position)
+	public void MovePlayer(Vector3 position,float rotate)
 	{
 		transform.position = position;
-		transform.Rotate (Vector3.forward,-dx*2);
+		transform.Rotate (Vector3.forward,-rotate*2);
 	}
 
 }
