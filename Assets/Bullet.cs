@@ -4,8 +4,13 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
 	public float bullet_speed;
+	private float life=0;
 
 	void Update () {
-		transform.position += transform.forward*bullet_speed;
+		life++;
+		transform.position += transform.up*bullet_speed;
+		if (life > 60) {
+			Destroy (gameObject);
+		}
 	}
 }
