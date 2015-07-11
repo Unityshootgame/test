@@ -7,6 +7,10 @@ public class NetworkViewManager : MonoBehaviour
 	public static bool connected = false;
 	//saver IP 
 	public string connectionIP="10.25.32.212";
+	private string hayakawaIP="10.25.30.240";
+	private string uekiIP="10.25.31.241";
+	private string tashimaIP="10.25.32.148";
+	private string uchiyamaIP="10.25.32.212";
 	//接続ポート番号
 	public int portNumber = 8080;
 
@@ -26,6 +30,18 @@ public class NetworkViewManager : MonoBehaviour
 				//せつぞく
 			if (GUILayout.Button ("Connect")) {
 				Network.Connect (connectionIP, portNumber);
+			}
+			if (GUILayout.Button ("Connect Hayakawa")) {
+				Network.Connect (hayakawaIP, portNumber);
+			}
+			if (GUILayout.Button ("Connect Tashima")) {
+				Network.Connect (tashimaIP, portNumber);
+			}
+			if (GUILayout.Button ("Connect Uchiyama")) {
+				Network.Connect (uchiyamaIP, portNumber);
+			}
+			if (GUILayout.Button ("Connect Ueki")) {
+				Network.Connect (uekiIP, portNumber);
 			}
 			if(GUILayout.Button("Server"))
 			{
