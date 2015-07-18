@@ -14,9 +14,4 @@ public class Bullet : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
-	void OnCTriggerEnter(Collision Col) {
-		Conlife.Damege (1);
-		Destroy(gameObject);
-		
-	}
 }

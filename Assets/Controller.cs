@@ -30,17 +30,30 @@ public class Controller : MonoBehaviour
 			transform.Translate(0.0f,dy*0.1f,0.0f);
 			GetComponent<NetworkView>().RPC ("MovePlayer",RPCMode.Others,transform.position,dx);
 		}
-	}
-	public void Damege(int dame){
-	if (isMine) {
-		Life -=dame;
+		if (Life <= 0) {
+			Destroy (gameObject);
 		}
 	}
+
+	void OnTriggerEnter(Collider col){
+		if (gameObject.tag == "Player") {
+			return;
+		} else if (col.gameObject.tag == "Bullet") {
+			Life--;
+			GetComponent<NetworkView>().RPC("Damege",RPCMode.Others,1);
+			Destroy(col.gameObject);
+		}
+	}
+
 	[RPC]
 	public void MovePlayer(Vector3 position,float rotate)
 	{
 		transform.position = position;
 		transform.Rotate (Vector3.forward,-rotate*2);
+	}
+	[RPC]
+	public void Damege(int dame){
+		Life -= dame;
 	}
 
 }
