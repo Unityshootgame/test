@@ -270,6 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMine: 0
+  dx: 0
+  dy: 0
+  Bullet: {fileID: 173372, guid: b7dce198eff8538468d0f7ae8977dd3f, type: 2}
 --- !u!1 &609098297
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMine: 0
+  dx: 0
+  dy: 0
+  Bullet: {fileID: 173372, guid: b7dce198eff8538468d0f7ae8977dd3f, type: 2}
 --- !u!1 &734611577
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +407,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef2e2e8cc3d55c4fb23c8f240100d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMine: 1
+  isMine: 0
+  dx: 0
+  dy: 0
+  Bullet: {fileID: 173372, guid: b7dce198eff8538468d0f7ae8977dd3f, type: 2}
 --- !u!23 &734611579
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -694,4 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef2e2e8cc3d55c4fb23c8f240100d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMine: 0
+  isMine: 1
+  dx: 0
+  dy: 0
+  Bullet: {fileID: 173372, guid: b7dce198eff8538468d0f7ae8977dd3f, type: 2}
