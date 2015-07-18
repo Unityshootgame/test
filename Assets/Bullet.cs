@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
 	public float bullet_speed;
 	private float life=0;
+	public Controller Conlife;
 
 	void Update () {
 		life++;
@@ -12,5 +13,10 @@ public class Bullet : MonoBehaviour {
 		if (life > 60) {
 			Destroy (gameObject);
 		}
+	}
+	void OnCTriggerEnter(Collision Col) {
+		Conlife.Damege (1);
+		Destroy(gameObject);
+		
 	}
 }
